@@ -87,24 +87,7 @@
               </svg>
             </div>
             <div class="filters__wrapper">
-              <div class="filters__item">
-                <label class="filters__radio">
-                  <input type="radio" name="type" value="1"><b></b>
-                </label>
-                <p>Холодная вода</p>
-              </div>
-              <div class="filters__item">
-                <label class="filters__radio">
-                  <input type="radio" name="type" value="2"><b></b>
-                </label>
-                <p>Горячая вода</p>
-              </div>
-              <div class="filters__item">
-                <label class="filters__radio">
-                  <input type="radio" name="type" value="" checked=""><b></b>
-                </label>
-                <p>Все счетчики</p>
-              </div>
+              <div class="filters__show-btn js-filter-toggle"><img src="images/tune.svg"><span>Подбор по параметрам</span></div>
             </div>
             <div class="filters__btn filters__sort">
               <select name="orderby">
@@ -116,6 +99,122 @@
             </div>
             <input type="hidden" name="category" value="2">
             <input type="hidden" name="s" value="">
+            <div class="filters__dropdown fdrop fdrop--active">
+              <button class="fdrop__close js-filter-close"><img src="images/fclose.svg"></button>
+              <div class="fdrop__inner">
+                <div class="fdrop__block">
+                  <div class="fdrop__row">
+                    <div class="fdrop__item">
+                      <div class="fdrop__title">Стоимость, грн</div>
+                      <div class="fdrop__range-slider"><span>
+                          <input type="number" value="25000" min="0" max="100000" step="500">
+                          <input type="number" value="75000" min="0" max="100000" step="500"></span>
+                        <input value="25000" min="0" max="100000" step="500" type="range">
+                        <input value="50000" min="0" max="100000" step="500" type="range">
+                        <svg width="100%" height="24">
+                          <line x1="4" y1="0" x2="480" y2="0" stroke="#0569FF" stroke-width="12" stroke-dasharray="1 28"></line>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="fdrop__block">
+                  <div class="fdrop__row">
+                    <div class="fdrop__item">
+                      <div class="fdrop__title">Бренд</div>
+                      <select class="fdrop__select" id="fselect1" multiple name="" size="1">
+                        <option value="Опция 1">Опция 1</option>
+                        <option value="Опция 2">Опция 2</option>
+                        <option value="Опция 3">Опция 3</option>
+                        <option value="Опция 4">Опция 4</option>
+                        <option value="Опция 5">Опция 5</option>
+                      </select>
+                    </div>
+                    <div class="fdrop__item">
+                      <div class="fdrop__title">Объем, л.</div>
+                      <select class="fdrop__select" id="fselect2" multiple name="" size="1">
+                        <option value="Опция 1">Опция 1</option>
+                        <option value="Опция 2">Опция 2</option>
+                        <option value="Опция 3">Опция 3</option>
+                        <option value="Опция 4">Опция 4</option>
+                        <option value="Опция 5">Опция 5</option>
+                      </select>
+                    </div>
+                    <div class="fdrop__item">
+                      <div class="fdrop__title">Тип тена</div>
+                      <select class="fdrop__select" id="fselect3" multiple name="" size="1">
+                        <option value="Опция 1">Опция 1</option>
+                        <option value="Опция 2">Опция 2</option>
+                        <option value="Опция 3">Опция 3</option>
+                        <option value="Опция 4">Опция 4</option>
+                        <option value="Опция 5">Опция 5</option>
+                      </select>
+                    </div>
+                    <div class="fdrop__item">
+                      <div class="fdrop__title">Установка</div>
+                      <select class="fdrop__select" id="fselect4" multiple name="" size="1">
+                        <option value="Опция 1">Опция 1</option>
+                        <option value="Опция 2">Опция 2</option>
+                        <option value="Опция 3">Опция 3</option>
+                        <option value="Опция 4">Опция 4</option>
+                        <option value="Опция 5">Опция 5</option>
+                      </select>
+                    </div>
+                    <div class="fdrop__item">
+                      <div class="fdrop__title">Монтаж</div>
+                      <select class="fdrop__select" id="fselect5" multiple name="" size="1">
+                        <option value="Опция 1">Опция 1</option>
+                        <option value="Опция 2">Опция 2</option>
+                        <option value="Опция 3">Опция 3</option>
+                        <option value="Опция 4">Опция 4</option>
+                        <option value="Опция 5">Опция 5</option>
+                      </select>
+                    </div>
+                    <div class="fdrop__item">
+                      <div class="fdrop__title">Тип управления</div>
+                      <select class="fdrop__select" id="fselect6" multiple name="" size="1">
+                        <option value="Опция 1">Опция 1</option>
+                        <option value="Опция 2">Опция 2</option>
+                        <option value="Опция 3">Опция 3</option>
+                        <option value="Опция 4">Опция 4</option>
+                        <option value="Опция 5">Опция 5</option>
+                      </select>
+                    </div>
+                    <div class="fdrop__item">
+                      <div class="fdrop__title">Регулятор температуры</div>
+                      <select class="fdrop__select" id="fselect7" multiple name="" size="1">
+                        <option value="Опция 1">Опция 1</option>
+                        <option value="Опция 2">Опция 2</option>
+                        <option value="Опция 3">Опция 3</option>
+                        <option value="Опция 4">Опция 4</option>
+                        <option value="Опция 5">Опция 5</option>
+                        <option value="Опция 5">Опция 5</option>
+                      </select>
+                    </div>
+                    <div class="fdrop__item">
+                      <div class="fdrop__title">Мощность</div>
+                      <select class="fdrop__select" id="fselect8" multiple name="" size="1">
+                        <option value="Опция 1">Опция 1</option>
+                        <option value="Опция 2">Опция 2</option>
+                        <option value="Опция 3">Опция 3</option>
+                        <option value="Опция 4">Опция 4</option>
+                        <option value="Опция 5">Опция 5</option>
+                      </select>
+                    </div>
+                    <div class="fdrop__item">
+                      <div class="fdrop__title">Форма бойлера</div>
+                      <select class="fdrop__select" id="fselect9" multiple name="" size="1">
+                        <option value="Опция 1">Опция 1</option>
+                        <option value="Опция 2">Опция 2</option>
+                        <option value="Опция 3">Опция 3</option>
+                        <option value="Опция 4">Опция 4</option>
+                        <option value="Опция 5">Опция 5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </form>
           <div class="counters">
             <div class="counters__item">

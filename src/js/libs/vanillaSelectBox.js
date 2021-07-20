@@ -455,7 +455,7 @@ function vanillaSelectBox(domSelector, options) {
         if (self.multipleSize != -1) {
             if (nrActives > self.multipleSize) {
                 let wordForItems = self.userOptions.translations.items || "items"
-                selectedTexts = nrActives + " " + wordForItems;
+                selectedTexts = wordForItems + nrActives;
             }
         }
         if (self.isMultiple) {
