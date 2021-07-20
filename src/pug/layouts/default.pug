@@ -1,0 +1,35 @@
+doctype html
+
+block vars
+include ../components/_mixins
+
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="description" content="")
+		meta(name="keywords" content="")
+
+		//old css
+		link(href='https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap' rel='stylesheet')
+		link(href='http://dev2.mockup.digital/wp-content/themes/engineering_theme/assets/css/main.css?v=4' rel='stylesheet')
+		link(rel='stylesheet' href='http://dev2.mockup.digital/wp-content/themes/engineering_theme/style.css?v1.04')
+		link#wp-block-library-css(rel='stylesheet' href='http://dev2.mockup.digital/wp-includes/css/dist/block-library/style.min.css?ver=5.7.2' type='text/css' media='all')
+		link#wpm-main-css(rel='stylesheet' href='//dev2.mockup.digital/wp-content/plugins/wp-multilang/assets/styles/main.min.css?ver=2.4.1' type='text/css' media='all')
+
+		//new css
+		link(href="css/main.min.css" rel="stylesheet")
+
+		title= `${page.title}`
+
+	body
+		block main
+
+		//old js
+		script(src='http://dev2.mockup.digital/wp-content/themes/engineering_theme/assets/js/main.js?v=3')
+		script#wp-embed-js(type='text/javascript' src='http://dev2.mockup.digital/wp-includes/js/wp-embed.min.js?ver=5.7.2')
+		script(type='text/javascript' src='http://dev2.mockup.digital/wp-content/themes/engineering_theme/scripts.js?v1.05')
+
+		//new js
+		script(src="js/main.js")
+

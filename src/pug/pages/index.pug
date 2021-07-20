@@ -1,0 +1,342 @@
+extends ../layouts/default
+
+block vars
+	-
+		const page = {
+			title: 'фильтер'
+		};
+
+block main
+
+
+	.wrapper.main_page
+		header.header
+			.header__wrapper
+				a.header__logo(href='/')
+					svg
+						use(href='images/sprite.svg#logo')
+			ul.header__menu
+				li#header__item-47.header__item.header__item-type-taxonomy.header__item-object-category.header__item-47
+					a.header__link(href='http://dev2.mockup.digital/category/schetchiki-tepla/') Счетчики тепла
+				li#header__item-48.header__item.header__item-type-taxonomy.header__item-object-category.current-header__item.header__item-48
+					a.header__link(href='http://dev2.mockup.digital/category/schetchiki-vody/' aria-current='page') Счетчики воды
+				li#header__item-49.header__item.header__item-type-taxonomy.header__item-object-category.header__item-49
+					a.header__link(href='http://dev2.mockup.digital/category/bojlery/') Бойлеры
+				li.header__item
+					a.header__link(href='#' data-id='4') Наши услуги
+				li.header__item
+					a.header__link(href='http://dev2.mockup.digital/about-company/' data-id='5') О компании
+			.header__wrapper.header__info
+				a.header__phone(href='tel:0675134857')
+					| (067) 513-48-57
+				a.header__phone(href='tel:0504873877')
+					| (050) 487-38-77
+				a.header__phone(href='tel:0632056157')
+					| (063) 205-61-57
+				a.header__phone(href='tel:0443642970') (044) 364-29-70
+				p.header__desc
+					a.header__desc-link(href='http://dev2.mockup.digital/kontakty/') Контакты
+					span |
+					a.header__desc-link(href='http://dev2.mockup.digital/oplata-i-dostavka/') Оплата и доставка
+				p.header__disclaimer © 2021 E-engineering
+			.copyright
+				span Создание сайта:
+				a(href='https://mockup.digital/' target='blank') mockup.digital
+		header.mobile__header
+			.container
+				a.mobile__header-logo(href='/')
+					svg
+						use(href='images/sprite.svg#logo')
+				a.footer__link.market-icon(href='#')
+					svg
+						use(href='images/sprite.svg#market')
+					span.market-icon-count
+						span 0
+				a.mobile__header-burger(href='#')
+					span
+		.mobile-menu__wrapper
+			form.mobile-menu__search(action='/' mathod='get')
+				input.mobile-menu__search-input(type='text' name='s' placeholder='Поиск по сайту')
+				svg
+					use(href='images/sprite.svg#search')
+			ul.mobile-menu
+				li.mobile-menu__item.mobile-menu__item-type-taxonomy.mobile-menu__item-object-category.mobile-menu__item-47
+					a.mobile-menu__link(href='http://dev2.mockup.digital/category/schetchiki-tepla/') Счетчики тепла
+				li.mobile-menu__item.mobile-menu__item-type-taxonomy.mobile-menu__item-object-category.current-mobile-menu__item.mobile-menu__item-48
+					a.mobile-menu__link(href='http://dev2.mockup.digital/category/schetchiki-vody/' aria-current='page') Счетчики воды
+				li.mobile-menu__item.mobile-menu__item-type-taxonomy.mobile-menu__item-object-category.mobile-menu__item-49
+					a.mobile-menu__link(href='http://dev2.mockup.digital/category/bojlery/') Бойлеры
+				li.mobile-menu__item
+					a.mobile-menu__link(href='#' data-id='4') Наши услуги
+				li.mobile-menu__item
+					a.mobile-menu__link(href='http://dev2.mockup.digital/about-company/' data-id='5') О компании
+				li.mobile-menu__item.mobile-menu__item-type-post_type.mobile-menu__item-object-page.mobile-menu__item-54
+					a.mobile-menu__link(href='http://dev2.mockup.digital/kontakty/') Контакты
+				li.mobile-menu__item.mobile-menu__item-type-post_type.mobile-menu__item-object-page.mobile-menu__item-55
+					a.mobile-menu__link(href='http://dev2.mockup.digital/oplata-i-dostavka/') Оплата и доставка
+			a.mobile-menu__phones(href='tel:0675134857')
+				| (067) 513-48-57
+			a.mobile-menu__phones(href='tel:0504873877')
+				| (050) 487-38-77
+			a.mobile-menu__phones(href='tel:0632056157')
+				| (063) 205-61-57
+			a.mobile-menu__phones(href='tel:0443642970') (044) 364-29-70
+			a.mobile-menu__lang(href='http://dev2.mockup.digital/ua/category/schetchiki-vody/')
+				svg
+					use(href='images/sprite.svg#lang')
+				span Укр
+		.basket
+			.basket__heading
+				p.basket__title Моя корзина
+				.basket__desc Товары (0)
+			.basket__content
+			.basket__result
+		main.main
+			.container
+				.banner(style='background-image:url(http://dev2.mockup.digital/wp-content/uploads/2021/04/banner-1-925x314.jpg)')
+					.banner__text
+						.banner__title Счетчики горячей  и холодной воды под ключ
+						.banner__desc Стоимость: от 450 грн
+
+				include ../blocks/filter.pug
+
+
+				.counters
+					.counters__item
+						.counters__heading
+							p.counters__name(data-id='437') Счетчик горячей воды Gross ETW-UA 15Г/110 Ду 15
+						img.counters__image(src='http://dev2.mockup.digital/wp-content/uploads/2021/06/gross-goryachaya-138x138.jpg' alt='')
+						.counters__indikator
+							svg
+								use(href='images/sprite.svg#cold')
+						.counters__btns
+							a.counters__marker(href='#' data-id='437')
+								svg
+									// is--disabled
+									use(href='images/sprite.svg#market-icon')
+								span В корзину
+							p.counters__price 370 грн.
+					.counters__item
+						.counters__heading
+							p.counters__name(data-id='433') Счетчик холодной воды Gross ETK-UA 15Х/110 Ду 15
+						img.counters__image(src='http://dev2.mockup.digital/wp-content/uploads/2021/06/gross-149x138.jpg' alt='')
+						.counters__indikator
+							svg
+								use(href='images/sprite.svg#cold')
+						.counters__btns
+							a.counters__marker(href='#' data-id='433')
+								svg
+									// is--disabled
+									use(href='images/sprite.svg#market-icon')
+								span В корзину
+							p.counters__price 370 грн.
+					.counters__item
+						.counters__heading
+							p.counters__name(data-id='428') Механический счетчик воды Teksan CT15 Q3 2.5/110 Ду 15
+						img.counters__image(src='http://dev2.mockup.digital/wp-content/uploads/2021/06/teksan_holod-1-138x138.jpg' alt='')
+						.counters__indikator
+							svg
+						.counters__btns
+							a.counters__marker(href='#' data-id='428')
+								svg
+									// is--disabled
+									use(href='images/sprite.svg#market-icon')
+								span В корзину
+							p.counters__price 390 грн.
+					.counters__item
+						.counters__heading
+							p.counters__name(data-id='423') Счетчик холодной воды GIDROTEK Dn15/110
+						img.counters__image(src='http://dev2.mockup.digital/wp-content/uploads/2021/06/gidrotek_1-172x114.jpg' alt='')
+						.counters__indikator
+							svg
+								use(href='images/sprite.svg#cold')
+						.counters__btns
+							a.counters__marker(href='#' data-id='423')
+								svg
+									// is--disabled
+									use(href='images/sprite.svg#market-icon')
+								span В корзину
+							p.counters__price 410 грн.
+					.counters__item
+						.counters__heading
+							p.counters__name(data-id='418') Счетчик горячей воды GIDROTEK Dn15/110
+						img.counters__image(src='http://dev2.mockup.digital/wp-content/uploads/2021/06/ecomess-goryachaya-1-1-138x138.jpg' alt='')
+						.counters__indikator
+							svg
+								use(href='images/sprite.svg#hot')
+						.counters__btns
+							a.counters__marker(href='#' data-id='418')
+								svg
+									// is--disabled
+									use(href='images/sprite.svg#market-icon')
+								span В корзину
+							p.counters__price 410 грн.
+					.counters__item
+						.counters__heading
+							p.counters__name(data-id='413') Счетчик горячей воды Ecomess Picoflux Q3 2.5/80 Ду 15
+						img.counters__image(src='http://dev2.mockup.digital/wp-content/uploads/2021/06/ecomess-goryachaya-1-138x138.jpg' alt='')
+						.counters__indikator
+							svg
+								use(href='images/sprite.svg#hot')
+						.counters__btns
+							a.counters__marker(href='#' data-id='413')
+								svg
+									// is--disabled
+									use(href='images/sprite.svg#market-icon')
+								span В корзину
+							p.counters__price 420 грн.
+					.counters__item
+						.counters__heading
+							p.counters__name(data-id='407') Счетчик горячей воды Ecomess Picoflux Q3 1.6/110 Ду 15
+						img.counters__image(src='http://dev2.mockup.digital/wp-content/uploads/2021/06/ecomess-goryachaya-138x138.jpg' alt='')
+						.counters__indikator
+							svg
+								use(href='images/sprite.svg#hot')
+						.counters__btns
+							a.counters__marker(href='#' data-id='407')
+								svg
+									// is--disabled
+									use(href='images/sprite.svg#market-icon')
+								span В корзину
+							p.counters__price 420 грн.
+					.counters__item
+						.counters__heading
+							p.counters__name(data-id='402') Счетчик холодной воды Ecomess Picoflux Q3 2.5/80 Ду 15
+						img.counters__image(src='http://dev2.mockup.digital/wp-content/uploads/2021/06/ecomess-holodnaya-1-133x138.jpg' alt='')
+						.counters__indikator
+							svg
+								use(href='images/sprite.svg#cold')
+						.counters__btns
+							a.counters__marker(href='#' data-id='402')
+								svg
+									// is--disabled
+									use(href='images/sprite.svg#market-icon')
+								span В корзину
+							p.counters__price 420 грн.
+					.counters__item
+						.counters__heading
+							p.counters__name(data-id='397') Счетчик холодной воды Ecomess Picoflux Q3 1.6/110 Ду 15
+						img.counters__image(src='http://dev2.mockup.digital/wp-content/uploads/2021/06/ecomess-holodnaya-133x138.jpg' alt='')
+						.counters__indikator
+							svg
+								use(href='images/sprite.svg#cold')
+						.counters__btns
+							a.counters__marker(href='#' data-id='397')
+								svg
+									// is--disabled
+									use(href='images/sprite.svg#market-icon')
+								span В корзину
+							p.counters__price 420 грн.
+				a.counters__more(href='javascript:;' data-page='2' data-sort='0' data-category='2' data-type='')
+					span Показать еще
+					svg
+						use(href='images/sprite.svg#counters__more')
+				.services-slider__wrapper
+					p.title Наши услуги
+					.services-slider.slick-initialized.slick-slider.slick-dotted
+						.slick-list.draggable
+							.slick-track(style='opacity: 1; width: 945px; transform: translate3d(0px, 0px, 0px);')
+								a#slick-slide00.services-slider__item.slick-slide.slick-current.slick-active(href='http://dev2.mockup.digital/schetchiki-vody/' data-slick-index='0' aria-hidden='false' style='width: 315px;' tabindex='0' role='tabpanel' aria-describedby='slick-slide-control00')
+									.services__item(style='background-image:url(http://dev2.mockup.digital/wp-content/uploads/2021/04/rectangle-60-295x295.jpg)')
+										.services__price от 299 грн
+										p.services__desc Поверка счетчиков воды без снятия за 30 минут
+										.services__fire
+											svg
+												use(href='images/sprite.svg#fire')
+								a#slick-slide01.services-slider__item.slick-slide.slick-active(href='http://dev2.mockup.digital/schetchiki-tepla/' data-slick-index='1' aria-hidden='false' style='width: 315px;' tabindex='0' role='tabpanel' aria-describedby='slick-slide-control01')
+									.services__item(style='background-image:url(http://dev2.mockup.digital/wp-content/uploads/2021/04/rectangle-60-295x295.png)')
+										.services__price от 900 грн
+										p.services__desc Поверка счетчиков тепла
+										.services__fire
+											svg
+												use(href='images/sprite.svg#fire')
+								a#slick-slide02.services-slider__item.slick-slide.slick-active(href='http://dev2.mockup.digital/razrabotka-proekta-ustanovki-teplovogo-schetchika/' data-slick-index='2' aria-hidden='false' style='width: 315px;' tabindex='0' role='tabpanel' aria-describedby='slick-slide-control02')
+									.services__item(style='background-image:url(http://dev2.mockup.digital/wp-content/uploads/2021/04/rectangle-60-1-295x295.jpg)')
+										.services__price от 450 грн
+										p.services__desc Разработка проекта установки
+					.services-slider__tools
+						.services-slider__arrow.services-slider__prev.slick-arrow.slick-hidden(aria-disabled='true' tabindex='-1')
+							svg
+								use(href='images/sprite.svg#prev')
+						.services-slider__dots
+							ul.slick-dots(role='tablist')
+								li.slick-active(role='presentation')
+									button#slick-slide-control00(type='button' role='tab' aria-controls='slick-slide00' aria-label='1 of 1' tabindex='0' aria-selected='true') 1
+						.services-slider__arrow.services-slider__next.slick-arrow.slick-hidden(aria-disabled='true' tabindex='-1')
+							svg
+								use(href='images/sprite.svg#next')
+				.menu-item(data-id='4')
+					.container
+						.services
+							a.services__item(href='http://dev2.mockup.digital/schetchiki-vody/' style='background-image:url(http://dev2.mockup.digital/wp-content/uploads/2021/04/rectangle-60-295x295.jpg)')
+								.services__price от 299 грн
+								p.services__desc Поверка счетчиков воды без снятия за 30 минут
+								.services__fire
+									svg
+										use(href='images/sprite.svg#fire')
+							a.services__item(href='http://dev2.mockup.digital/schetchiki-tepla/' style='background-image:url(http://dev2.mockup.digital/wp-content/uploads/2021/04/rectangle-60-295x295.png)')
+								.services__price от 900 грн
+								p.services__desc Поверка счетчиков тепла
+								.services__fire
+									svg
+										use(href='images/sprite.svg#fire')
+							a.services__item(href='http://dev2.mockup.digital/razrabotka-proekta-ustanovki-teplovogo-schetchika/' style='background-image:url(http://dev2.mockup.digital/wp-content/uploads/2021/04/rectangle-60-1-295x295.jpg)')
+								.services__price от 450 грн
+								p.services__desc Разработка проекта установки
+		.order__wrapper
+		.card__wrapper
+		footer.footer
+			ul.footer__menu
+				li.footer__item
+					a.footer__link(href='/')
+						svg
+							use(href='images/sprite.svg#home')
+				li.footer__item
+					a#search-btn.footer__link(href='#')
+						svg
+							use(href='images/sprite.svg#search')
+				li.footer__item
+					a.footer__link.market-icon(href='#')
+						svg
+							use(href='images/sprite.svg#market')
+						span.market-icon-count
+							span 0
+				li.footer__item
+					a#message-btn.footer__link(href='#')
+						svg
+							use(href='images/sprite.svg#mail')
+			a.footer__lang(href='http://dev2.mockup.digital/ua/category/schetchiki-vody/')
+				svg
+					use(href='images/sprite.svg#lang')
+				span Укр
+			ul.footer__social
+				li.footer__social-item
+					a.footer__social-link(href='https://www.facebook.com/eincomua/')
+						svg
+							use(href='images/sprite.svg#facebook')
+				li.footer__social-item
+					a.footer__social-link(href='https://www.youtube.com/channel/UCmQLqlMaMh3HKquO81oujcA')
+						svg
+							use(href='images/sprite.svg#utube')
+		#modal-1.modal(style='display: none;')
+			form.modal-content
+				.title Оформление новой заявки
+				input.form__input(type='text' name='form_name' placeholder='Ваше имя')
+				input.form__input(type='text' name='form_phone' placeholder='Ваш номер телефона' inputmode='text')
+				input(type='hidden' name='form_cart' value='')
+				button.form__btn Оформить заявку
+		#snx.modal(style='display: none;')
+			form.modal-content
+				.title Ваша заявка успешно отправлена!
+		.desktop-search
+			form.mobile-menu__search(action='/' mathod='get')
+				input.mobile-menu__search-input(type='text' name='s' placeholder='Поиск по сайту')
+				svg
+					use(href='images/sprite.svg#search')
+			.desktop-search__content
+				lorem
+					| ipsum dolor sit amet consectetur adipisicing elit. Fugit nostrum officia exercitationem quibusdam eos reprehenderit assumenda quo magnam ex perferendis quam illum itaque culpa sint cumque, corrupti libero veniam quod.
+		.overlay
+
+
+

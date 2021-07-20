@@ -1,0 +1,29 @@
+form.filters
+    .filters__btn.filters__type(data-id='1')
+        span Фильтр по типу счетчика
+        svg
+            use(href='images/sprite.svg#filt')
+    .filters__wrapper
+        .filters__item
+            label.filters__radio
+                input(type='radio' name='type' value='1')
+                b
+            p Холодная вода
+        .filters__item
+            label.filters__radio
+                input(type='radio' name='type' value='2')
+                b
+            p Горячая вода
+        .filters__item
+            label.filters__radio
+                input(type='radio' name='type' value='' checked='')
+                b
+            p Все счетчики
+    .filters__btn.filters__sort
+        select(name='orderby')
+            option(value='') По умолчанию
+            option(value='1') По популярности
+            option(value='2') По возрастанию цены
+            option(value='3') По убыванию цены
+    input(type='hidden' name='category' value='2')
+    input(type='hidden' name='s' value='')
