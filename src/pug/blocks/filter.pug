@@ -1,5 +1,5 @@
 form.filters
-    .filters__btn.filters__type(data-id='1')
+    .filters__btn.filters__type.js-filter-toggle
         span Фильтр по типу счетчика
         svg
             use(href='images/sprite.svg#filt')
@@ -18,7 +18,7 @@ form.filters
     input(type='hidden' name='category' value='2')
     input(type='hidden' name='s' value='')
 
-    .filters__dropdown.fdrop.fdrop--active
+    .filters__dropdown.fdrop
         button.fdrop__close.js-filter-close
             img(src="images/fclose.svg")
         .fdrop__inner
@@ -27,18 +27,17 @@ form.filters
                     .fdrop__item
                         .fdrop__title Стоимость, грн
                         .fdrop__range-slider
-                            span
-                                input(type='number' value='25000' min='0' max='100000' step='500')
-                                input(type='number' value='75000' min='0' max='100000' step='500')
-                            input(value='25000' min='0' max='100000' step='500' type='range')
-                            input(value='50000' min='0' max='100000' step='500' type='range')
-                            svg(width='100%' height='24')
-                                line(x1='4' y1='0' x2='480' y2='0' stroke='#0569FF' stroke-width='12' stroke-dasharray='1 28')
+                            #priceSlider(data-min="0" data-max="20000")
+                            .fdrop__inputs
+                                .fdrop__input
+                                    input#min-price(type="text" name="min-price" value="0")
+                                .fdrop__input
+                                    input#max-price(type="text" name="max-price" value="20000")
             .fdrop__block
                 .fdrop__row
                     .fdrop__item
                         .fdrop__title Бренд
-                        select#fselect1.fdrop__select(multiple name="" size="1")
+                        select#fselect1.fdrop__select(multiple name="" size="2")
                             option(value="Опция 1") Опция 1
                             option(value="Опция 2") Опция 2
                             option(value="Опция 3") Опция 3
@@ -46,7 +45,7 @@ form.filters
                             option(value="Опция 5") Опция 5
                     .fdrop__item
                         .fdrop__title Объем, л.
-                        select#fselect2.fdrop__select(multiple name="" size="1")
+                        select#fselect2.fdrop__select(multiple name="" size="2")
                             option(value="Опция 1") Опция 1
                             option(value="Опция 2") Опция 2
                             option(value="Опция 3") Опция 3
@@ -54,7 +53,7 @@ form.filters
                             option(value="Опция 5") Опция 5
                     .fdrop__item
                         .fdrop__title Тип тена
-                        select#fselect3.fdrop__select(multiple name="" size="1")
+                        select#fselect3.fdrop__select(multiple name="" size="2")
                             option(value="Опция 1") Опция 1
                             option(value="Опция 2") Опция 2
                             option(value="Опция 3") Опция 3
@@ -62,7 +61,7 @@ form.filters
                             option(value="Опция 5") Опция 5
                     .fdrop__item
                         .fdrop__title Установка
-                        select#fselect4.fdrop__select(multiple name="" size="1")
+                        select#fselect4.fdrop__select(multiple name="" size="2")
                             option(value="Опция 1") Опция 1
                             option(value="Опция 2") Опция 2
                             option(value="Опция 3") Опция 3
@@ -70,7 +69,7 @@ form.filters
                             option(value="Опция 5") Опция 5
                     .fdrop__item
                         .fdrop__title Монтаж
-                        select#fselect5.fdrop__select(multiple name="" size="1")
+                        select#fselect5.fdrop__select(multiple name="" size="2")
                             option(value="Опция 1") Опция 1
                             option(value="Опция 2") Опция 2
                             option(value="Опция 3") Опция 3
@@ -78,7 +77,7 @@ form.filters
                             option(value="Опция 5") Опция 5
                     .fdrop__item
                         .fdrop__title Тип управления
-                        select#fselect6.fdrop__select(multiple name="" size="1")
+                        select#fselect6.fdrop__select(multiple name="" size="2")
                             option(value="Опция 1") Опция 1
                             option(value="Опция 2") Опция 2
                             option(value="Опция 3") Опция 3
@@ -86,7 +85,7 @@ form.filters
                             option(value="Опция 5") Опция 5
                     .fdrop__item
                         .fdrop__title Регулятор температуры
-                        select#fselect7.fdrop__select(multiple name="" size="1")
+                        select#fselect7.fdrop__select(multiple name="" size="2")
                             option(value="Опция 1") Опция 1
                             option(value="Опция 2") Опция 2
                             option(value="Опция 3") Опция 3
@@ -95,7 +94,7 @@ form.filters
                             option(value="Опция 5") Опция 5
                     .fdrop__item
                         .fdrop__title Мощность
-                        select#fselect8.fdrop__select(multiple name="" size="1")
+                        select#fselect8.fdrop__select(multiple name="" size="2")
                             option(value="Опция 1") Опция 1
                             option(value="Опция 2") Опция 2
                             option(value="Опция 3") Опция 3
@@ -103,7 +102,7 @@ form.filters
                             option(value="Опция 5") Опция 5
                     .fdrop__item
                         .fdrop__title Форма бойлера
-                        select#fselect9.fdrop__select(multiple name="" size="1")
+                        select#fselect9.fdrop__select(multiple name="" size="2")
                             option(value="Опция 1") Опция 1
                             option(value="Опция 2") Опция 2
                             option(value="Опция 3") Опция 3

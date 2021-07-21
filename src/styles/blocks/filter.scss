@@ -1,6 +1,15 @@
 .filters{
   position: relative;
 
+  &__sort{
+    @include max(sm){
+      min-height: 48px;
+      background-color: #EDF0F9;
+      background-position-x: calc(100% - 12px);
+      padding: 0 12px 0 16px;
+    }
+  }
+
   &__show-btn{
     font-weight: 450;
     font-size: 14px;
@@ -29,6 +38,9 @@
   &__dropdown{
     top: calc(100% + 16px);
     left: 0;
+    @include max(sm){
+      top: 52px;
+    }
   }
 }
 
@@ -66,6 +78,10 @@
 
   &__inner{
     padding: 32px 24px 16px;
+    @include max(sm){
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
   &__block{}
   &__row{
@@ -78,6 +94,21 @@
     max-width: 279px;
     padding: 0 16px;
     margin-bottom: 24px;
+    @include max(lg){
+      max-width: 33.333%;
+      width: 33.333%;
+      flex-basis: 33.333%;
+    }
+    @include max(sm){
+      max-width: 50%;
+      width: 50%;
+      flex-basis: 50%;
+    }
+    @include max(xs){
+      max-width: 100%;
+      width: 100%;
+      flex-basis: 100%;
+    }
   }
   &__title{
     font-weight: 450;
@@ -112,11 +143,22 @@
         height: 10px !important;
         position: absolute;
         right: 11px !important;
-        top: 50% !important;
+        top: 45% !important;
         transform: translateY(-50%);
         margin: 0 !important;
         border: none !important;
         background: url('../images/fdown.svg') center center no-repeat;
+      }
+
+      &.not-empty{
+        .title{
+          color: #000000;
+          font-weight: 450;
+        }
+        .caret{
+          background-image: url('../images/fclear.svg');
+          top: 50% !important;
+        }
       }
     }
     .multi li:not(.grouped-option)::after,
@@ -125,117 +167,56 @@
       box-sizing: content-box;
     }
   }
+  .vsb-menu{
+    border-radius: 0;
+  }
+
+
+
+  &__range-slider {
+    width: 100%;
+    #priceSlider{
+      width: calc(100% - 14px);
+      margin: 0 auto;
+    }
+  }
+
+  &__inputs{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  &__input{
+    width: calc(50% - 11px);
+    position: relative;
+    input{
+      width: 100%;
+      height: 32px;
+      background: #FFFFFF;
+      border: 1px solid #DCE4EE;
+      box-sizing: border-box;
+      border-radius: 3px;
+
+      font-size: 12px;
+      line-height: 135%;
+      color: #000000;
+      padding: 0 30px 0 12px;
+    }
+    &::after{
+      content: "грн";
+      display: block;
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      line-height: 135%;
+      color: #878E97;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+
+
+
 }
-
-.fdrop__range-slider {
-  width: 480px;
-  /* Match this to the SVG's x2 value */
-  margin: auto;
-  text-align: center;
-  position: relative;
-  height: 6em;
-
-  input[type="number"] {
-    border: 1px solid #ddd;
-    text-align: center;
-    font-size: 1.6em;
-  }
-  input[type="number"]:invalid,
-  input[type="number"]:out-of-range {
-    border: 2px solid #ff6347;
-  }
-  input[type="range"] {
-    -webkit-appearance: none;
-    width: 100%;
-  }
-  input[type="range"]:focus {
-    outline: none;
-  }
-  input[type="range"]:focus::-webkit-slider-runnable-track {
-    background: #2497e3;
-  }
-  input[type="range"]:focus::-ms-fill-lower {
-    background: #2497e3;
-  }
-  input[type="range"]:focus::-ms-fill-upper {
-    background: #2497e3;
-  }
-  input[type="range"]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 5px;
-    cursor: pointer;
-    animate: 0.2s;
-    background: #2497e3;
-    border-radius: 1px;
-    box-shadow: none;
-    border: 0;
-  }
-  input[type="range"]::-webkit-slider-thumb {
-    z-index: 2;
-    position: relative;
-    box-shadow: 0px 0px 0px #000;
-    border: 1px solid #2497e3;
-    height: 18px;
-    width: 18px;
-    border-radius: 25px;
-    background: #a1d0ff;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -7px;
-  }
-  input[type="range"]::-moz-range-track {
-    width: 100%;
-    height: 5px;
-    cursor: pointer;
-    animate: 0.2s;
-    background: #2497e3;
-    border-radius: 1px;
-    box-shadow: none;
-    border: 0;
-  }
-  input[type="range"]::-moz-range-thumb {
-    z-index: 2;
-    position: relative;
-    box-shadow: 0px 0px 0px #000;
-    border: 1px solid #2497e3;
-    height: 18px;
-    width: 18px;
-    border-radius: 25px;
-    background: #a1d0ff;
-    cursor: pointer;
-  }
-  input[type="range"]::-ms-track {
-    width: 100%;
-    height: 5px;
-    cursor: pointer;
-    animate: 0.2s;
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-  }
-  input[type="range"]::-ms-fill-lower,
-  input[type="range"]::-ms-fill-upper {
-    background: #2497e3;
-    border-radius: 1px;
-    box-shadow: none;
-    border: 0;
-  }
-  input[type="range"]::-ms-thumb {
-    z-index: 2;
-    position: relative;
-    box-shadow: 0px 0px 0px #000;
-    border: 1px solid #2497e3;
-    height: 18px;
-    width: 18px;
-    border-radius: 25px;
-    background: #a1d0ff;
-    cursor: pointer;
-  }
-  svg,
-  input[type="range"] {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-  }
-}
-

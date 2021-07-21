@@ -20,44 +20,43 @@
         });
     });
 
-    (function() {
-        const parent = document.querySelector('.fdrop__range-slider');
+    let priceSlider = document.getElementById('priceSlider');
+    let minPrice = parseInt(priceSlider.dataset.min)
+    let maxPrice = parseInt(priceSlider.dataset.max)
 
-        if (!parent) {
-            return;
+    noUiSlider.create(priceSlider, {
+        start: [minPrice, maxPrice],
+        connect: true,
+        step: 1,
+        range: {
+            'min': minPrice,
+            'max': maxPrice
         }
+    });
 
-        const rangeS = parent.querySelectorAll('input[type="range"]'),
-            numberS = parent.querySelectorAll('input[type="number"]');
 
-        rangeS.forEach((el) => {
-            el.oninput = () => {
-                let slide1 = parseFloat(rangeS[0].value),
-                    slide2 = parseFloat(rangeS[1].value);
+    let inputMin = document.getElementById('min-price');
+    let inputMax = document.getElementById('max-price');
 
-                if (slide1 > slide2) {
-                    [slide1, slide2] = [slide2, slide1];
-                }
+    priceSlider.noUiSlider.on('update', function (values, handle) {
+        var value = values[handle];
+        if (handle) {
+            inputMax.value = Math.round(value);
+        } else {
+            inputMin.value = Math.round(value);
+        }
+    });
 
-                numberS[0].value = slide1;
-                numberS[1].value = slide2;
-            }
-        });
+    $('#min-price').on('cnahge keyup paste',function (){
+        if ($(this).val() < minPrice) $(this).val(minPrice);
+        if ($(this).val() > maxPrice) $(this).val(maxPrice);
+        priceSlider.noUiSlider.set([$(this).val(), null]);
+    });
+    $('#max-price').on('cnahge keyup paste',function (){
+        if ($(this).val() < minPrice) $(this).val(minPrice);
+        if ($(this).val() > maxPrice) $(this).val(maxPrice);
+        priceSlider.noUiSlider.set([null, $(this).val()]);
+    });
 
-        numberS.forEach((el) => {
-            el.oninput = () => {
-                let number1 = parseFloat(numberS[0].value),
-                    number2 = parseFloat(numberS[1].value);
-
-                if (number1 > number2) {
-                    let tmp = number1;
-                    numberS[0].value = number2;
-                    numberS[1].value = tmp;
-                }
-
-                rangeS[0].value = number1;
-                rangeS[1].value = number2;
-            }
-        });
-    })();
 }(jQuery));
+

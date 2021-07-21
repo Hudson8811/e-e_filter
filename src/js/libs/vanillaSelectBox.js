@@ -94,7 +94,7 @@ function vanillaSelectBox(domSelector, options) {
     this.forbidenAttributes = ["class", "selected", "disabled", "data-text", "data-value", "style"];
     this.forbidenClasses = ["active", "disabled"];
     this.userOptions = {
-        maxWidth: 500,
+        maxWidth: 768,
         minWidth: -1,
         maxHeight: 400,
         translations: { "all": "All", "items": "items", "selectAll": "Select All", "clearAll": "Clear All" },
@@ -185,13 +185,13 @@ function vanillaSelectBox(domSelector, options) {
         if (selector === ".vsb-main button") {
             cssArray = [
                 { "key": "min-width", "value": "120px" },
-                { "key": "border-radius", "value": "0" },
+                { "key": "border-radius", "value": "3px" },
                 { "key": "width", "value": "100%" },
                 { "key": "text-align", "value": "left" },
                 { "key": "z-index", "value": "1" },
                 { "key": "color", "value": "#333" },
                 { "key": "background", "value": "white !important" },
-                { "key": "border", "value": "1px solid #999 !important" },
+                { "key": "border", "value": "1px solid #DCE4EE !important" },
                 { "key": "line-height", "value": "20px" },
                 { "key": "font-size", "value": "14px" },
                 { "key": "padding", "value": "6px 12px" }
@@ -670,6 +670,9 @@ function vanillaSelectBox(domSelector, options) {
             e.stopPropagation();
             if (self.userOptions.placeHolder != "" && self.title.textContent == "") {
                 self.title.textContent = self.userOptions.placeHolder;
+                self.button.classList.remove('not-empty');
+            } else {
+                self.button.classList.add('not-empty');
             }
         });
         function docListener() {
